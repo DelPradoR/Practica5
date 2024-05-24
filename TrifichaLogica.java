@@ -1,25 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package computacion.practica5;
+package uabc.poo.andres.le.gresley.mavenproject1;
 
 /**
  *
- * @author rauli
+ * @author Andres Le Gresley
+ *
+ * Clase trificha de domino en la que se crea el molde para pode rinstanciar un
+ * objeto de tipo trificha, la cual e suna ficha con la diferencia de que esta
+ * posee 3 lados
+ *
+ *
  */
-
 public class TrifichaLogica extends FichaLogica implements Movible {
 
     private int ladoC;
     private boolean orientacion;
-    private int posicion;
 
     public TrifichaLogica(int ladoA, int ladoB, int ladoC) {
         super(ladoA, ladoB);
         this.ladoC = ladoC;
         orientacion = true;
-        posicion=0;
     }
 
     public int getLadoC() {
@@ -53,67 +52,39 @@ public class TrifichaLogica extends FichaLogica implements Movible {
     public void setOrientacion(boolean orientacion) {
         this.orientacion = orientacion;
     }
-    public int getPosicion(){
-        return posicion;
-    }
 
     public void voltearFicha() {
         orientacion = !orientacion;
     }
 
     @Override
-    public void rotateRight() {
-        
-        
-        if(posicion==3){
-            posicion=0;
-        }else{
-            posicion++;
-            int aux = ladoA;
-            ladoA = ladoB;
-            ladoB = ladoC;
-            ladoC = aux;
-        }
+    public void rotateLeft() {
+        int aux = ladoA;
+        ladoA = ladoB;
+        ladoB = ladoC;
+        ladoC = aux;
     }
 
     @Override
-    public void rotateLeft() {
-        
-        if(posicion>0){
-            posicion--;
-            int aux = ladoA;
-            ladoA = ladoC;
-            ladoC = ladoB;
-            ladoB = aux;
-        }else{
-            posicion=3;
-        }
-}
+    public void rotateRight() {
+        int aux = ladoA;
+        ladoA = ladoC;
+        ladoC = ladoB;
+        ladoB = aux;
+    }
 
     @Override
     public String toString() {
         if (orientacion == true) {
-            if(posicion==0){
             StringBuilder cadena = new StringBuilder();
             cadena.append("     ").append(ladoA).append("\n");
             cadena.append("   " + ladoB).append("   ").append(ladoC).append("\n");
             return cadena.toString();
-            }else{
-            StringBuilder cadena = new StringBuilder();
-            cadena.append("   " + ladoA).append("   ").append(ladoC).append("\n");
-            cadena.append("     ").append(ladoB).append("\n");
-            return cadena.toString();
-            }
         } else {
             StringBuilder cadena = new StringBuilder();
-            cadena.append("    ").append(" | | ").append("\n");
-            cadena.append("  | |").append("  ").append(" | | ").append("\n");
+            cadena.append("    ").append(" x ").append("\n");
+            cadena.append("   x").append("  ").append(" x ").append("\n");
             return cadena.toString();
         }
-    }
-    @Override
-    public int contarPuntos(){
-        int puntosDLaTrificha=ladoA+ladoB+ladoC;
-        return puntosDLaTrificha;
     }
 }
