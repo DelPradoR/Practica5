@@ -1,12 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package computacion.practica5;
-import java.util.*;
+package uabc.poo.andres.le.gresley.mavenproject1;
+
 /**
  *
- * @author rauli
+ * @author Andres Le Gresley
+ * 
+ * Clase ficha de la cual se va generar herencia
+ * 
+ * 
  */
 public class FichaLogica implements Movible {
     
@@ -47,9 +47,9 @@ public class FichaLogica implements Movible {
     @Override
     public String toString() {
         if (orientacion == true) {
-        return " [ " + ladoA + " \n " + ladoB + " ] ";
+        return " [ " + ladoA + " | " + ladoB + " ] ";
         } else
-            return " ["+"   \n"+"   ] ";
+            return " [ x | x ] ";
     }
     
     public void voltearFicha() {
@@ -68,10 +68,5 @@ public class FichaLogica implements Movible {
         int aux = ladoA;
         ladoA = ladoB;
         ladoB = aux;
-    }
-    @Override
-    public int contarPuntos(){
-        int puntosDLaFicha=ladoA+ladoB;
-        return puntosDLaFicha;
     }
 }

@@ -1,12 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package computacion.practica5;
+package uabc.poo.andres.le.gresley.mavenproject1;
+
 import java.util.*;
+
 /**
  *
- * @author rauli
+ * @author Andres Le Gresley
+ *
+ * Esta clase se encarga de crear las fichas de un domino de doble 6 cotidiano
+ * con los metodos pertinentes
+ *
+ *
  */
 public class Domino {
 

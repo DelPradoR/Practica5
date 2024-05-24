@@ -1,19 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package computacion.practica5;
-import java.util.*;
+package uabc.poo.andres.le.gresley.mavenproject1;
+
 /**
  *
- * @author rauli
+ * @author Andres Le Gresley
+ * 
+ * Esta interfaz contiene firmas de metodos que puede o no ejecutar un objeto de tipo
+ *  tipo ficha, ya sea normal o trificha.
+ *
+ *
  */
 public interface Movible {
 
     public void rotateRight();
 
     public void rotateLeft();
-    
-    public int contarPuntos();
 
 }
